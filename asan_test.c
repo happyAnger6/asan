@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <asan_mem.h>
+
 int main()
 {
-	char *p = malloc(100);
-	free(p);
-
-	*((char *)(p+102)) = 'a';
-
+	char *p = malloc_100();
+	*p = 'a';
+	free_100(p);
 	return 0;
 }

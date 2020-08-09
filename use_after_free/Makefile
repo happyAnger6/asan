@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/asan/CMakeFiles /home/zhangxa/sources/asan/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/zhangxa/sources/asan && $(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/asan/CMakeFiles /home/zhangxa/sources/asan/use_after_free/CMakeFiles/progress.marks
+	cd /home/zhangxa/sources/asan && $(MAKE) -f CMakeFiles/Makefile2 use_after_free/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxa/sources/asan/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/zhangxa/sources/asan && $(MAKE) -f CMakeFiles/Makefile2 use_after_free/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,94 +88,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhangxa/sources/asan && $(MAKE) -f CMakeFiles/Makefile2 use_after_free/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/zhangxa/sources/asan && $(MAKE) -f CMakeFiles/Makefile2 use_after_free/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zhangxa/sources/asan && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named asan_test
+# Convenience name for target.
+use_after_free/CMakeFiles/use_after_free.dir/rule:
+	cd /home/zhangxa/sources/asan && $(MAKE) -f CMakeFiles/Makefile2 use_after_free/CMakeFiles/use_after_free.dir/rule
+.PHONY : use_after_free/CMakeFiles/use_after_free.dir/rule
 
-# Build rule for target.
-asan_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 asan_test
-.PHONY : asan_test
-
-# fast build rule for target.
-asan_test/fast:
-	$(MAKE) -f CMakeFiles/asan_test.dir/build.make CMakeFiles/asan_test.dir/build
-.PHONY : asan_test/fast
-
-#=============================================================================
-# Target rules for targets named double_free
-
-# Build rule for target.
-double_free: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 double_free
-.PHONY : double_free
-
-# fast build rule for target.
-double_free/fast:
-	$(MAKE) -f double_free/CMakeFiles/double_free.dir/build.make double_free/CMakeFiles/double_free.dir/build
-.PHONY : double_free/fast
-
-#=============================================================================
-# Target rules for targets named use_after_free
-
-# Build rule for target.
-use_after_free: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 use_after_free
+# Convenience name for target.
+use_after_free: use_after_free/CMakeFiles/use_after_free.dir/rule
 .PHONY : use_after_free
 
 # fast build rule for target.
 use_after_free/fast:
-	$(MAKE) -f use_after_free/CMakeFiles/use_after_free.dir/build.make use_after_free/CMakeFiles/use_after_free.dir/build
+	cd /home/zhangxa/sources/asan && $(MAKE) -f use_after_free/CMakeFiles/use_after_free.dir/build.make use_after_free/CMakeFiles/use_after_free.dir/build
 .PHONY : use_after_free/fast
 
-#=============================================================================
-# Target rules for targets named asan_mem
-
-# Build rule for target.
-asan_mem: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 asan_mem
-.PHONY : asan_mem
-
-# fast build rule for target.
-asan_mem/fast:
-	$(MAKE) -f libs/CMakeFiles/asan_mem.dir/build.make libs/CMakeFiles/asan_mem.dir/build
-.PHONY : asan_mem/fast
-
-asan_test.o: asan_test.c.o
-.PHONY : asan_test.o
+use_after_free.o: use_after_free.c.o
+.PHONY : use_after_free.o
 
 # target to build an object file
-asan_test.c.o:
-	$(MAKE) -f CMakeFiles/asan_test.dir/build.make CMakeFiles/asan_test.dir/asan_test.c.o
-.PHONY : asan_test.c.o
+use_after_free.c.o:
+	cd /home/zhangxa/sources/asan && $(MAKE) -f use_after_free/CMakeFiles/use_after_free.dir/build.make use_after_free/CMakeFiles/use_after_free.dir/use_after_free.c.o
+.PHONY : use_after_free.c.o
 
-asan_test.i: asan_test.c.i
-.PHONY : asan_test.i
+use_after_free.i: use_after_free.c.i
+.PHONY : use_after_free.i
 
 # target to preprocess a source file
-asan_test.c.i:
-	$(MAKE) -f CMakeFiles/asan_test.dir/build.make CMakeFiles/asan_test.dir/asan_test.c.i
-.PHONY : asan_test.c.i
+use_after_free.c.i:
+	cd /home/zhangxa/sources/asan && $(MAKE) -f use_after_free/CMakeFiles/use_after_free.dir/build.make use_after_free/CMakeFiles/use_after_free.dir/use_after_free.c.i
+.PHONY : use_after_free.c.i
 
-asan_test.s: asan_test.c.s
-.PHONY : asan_test.s
+use_after_free.s: use_after_free.c.s
+.PHONY : use_after_free.s
 
 # target to generate assembly for a file
-asan_test.c.s:
-	$(MAKE) -f CMakeFiles/asan_test.dir/build.make CMakeFiles/asan_test.dir/asan_test.c.s
-.PHONY : asan_test.c.s
+use_after_free.c.s:
+	cd /home/zhangxa/sources/asan && $(MAKE) -f use_after_free/CMakeFiles/use_after_free.dir/build.make use_after_free/CMakeFiles/use_after_free.dir/use_after_free.c.s
+.PHONY : use_after_free.c.s
 
 # Help Target
 help:
@@ -183,15 +145,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... asan_test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... double_free"
 	@echo "... use_after_free"
-	@echo "... asan_mem"
-	@echo "... asan_test.o"
-	@echo "... asan_test.i"
-	@echo "... asan_test.s"
+	@echo "... use_after_free.o"
+	@echo "... use_after_free.i"
+	@echo "... use_after_free.s"
 .PHONY : help
 
 
@@ -203,6 +162,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zhangxa/sources/asan && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
